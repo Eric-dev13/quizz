@@ -20,12 +20,11 @@ public class AnswersEntity {
     @Column(name = "title")
     private String title;
 
+    @Column(name = "is_correct")
+    private boolean isCorrect;
+
     @ManyToOne
     @JoinColumn(name = "question_id")
     private QuestionEntity question;
-
-//    @OneToMany(mappedBy = "answers", cascade = CascadeType.ALL)
-//    private List<AnswersQuestionEntity> answersQuestions = new ArrayList<>();
-
 
 }

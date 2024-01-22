@@ -1,12 +1,9 @@
-package com.api.quizz.controller.dto;
+package com.api.quizz.controller.dto.player;
 
-import com.api.quizz.repository.GameEntity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Data
 @NoArgsConstructor
@@ -17,4 +14,9 @@ public class PlayerDto {
     private String email;
     private String password;
     //private List<GameDto> games = new ArrayList<>();
+
+    public PlayerDto(String pseudo,String email) {
+        this.pseudo = pseudo;
+        this.email = email;
+    }
 }

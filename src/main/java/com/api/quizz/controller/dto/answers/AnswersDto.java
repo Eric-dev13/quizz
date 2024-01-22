@@ -1,4 +1,5 @@
-package com.api.quizz.controller.dto;
+package com.api.quizz.controller.dto.answers;
+
 
 import com.api.quizz.repository.QuestionEntity;
 import lombok.Data;
@@ -6,9 +7,9 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class AnswersQuestionDto {
+public class AnswersDto {
     private Long id;
+    private String title;
     private boolean isCorrect;
-    private AnswersDto answers;
-    //private QuestionDto question; //
+    private QuestionEntity question;
 }

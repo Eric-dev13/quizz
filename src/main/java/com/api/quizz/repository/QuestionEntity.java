@@ -29,14 +29,10 @@ public class QuestionEntity {
             inverseJoinColumns = @JoinColumn(name = "categories_id"))
     private List<CategoryEntity> categories = new ArrayList<>();
 
-
     @ManyToMany(mappedBy = "questions")
     private List<GameEntity> games = new ArrayList<>();
 
     @OneToMany(mappedBy = "question", orphanRemoval = true)
     private List<AnswersEntity> answers = new ArrayList<>();
-
-    //    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
-//    private List<AnswersQuestionEntity> answersQuestions = new ArrayList<>();
 
 }
