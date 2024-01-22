@@ -1,15 +1,12 @@
 package com.api.quizz.service;
 
-import com.api.quizz.controller.dto.CategoryDto;
-import com.api.quizz.controller.dto.GameDto;
+import com.api.quizz.controller.dto.game.GameDto;
+import com.api.quizz.controller.dto.game.StartGameDto;
 import com.api.quizz.mapper.MapStructMapper;
-import com.api.quizz.repository.CategoryEntity;
 import com.api.quizz.repository.GameEntity;
 import com.api.quizz.repository.GameRepository;
-import com.api.quizz.repository.QuestionEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -39,12 +36,11 @@ public class GameService {
         return mapStructMapper.gameEntityToDto(gameEntity);
     }
 
-    public boolean add(GameDto gameDto) {
+    public GameDto add(GameDto gameDto) {
         GameEntity gameEntity = mapStructMapper.gameDtoToEntity(gameDto);
         GameEntity savedGameEntity = gameRepository.save(gameEntity);
 
-        return savedGameEntity != null ;
+        return mapStructMapper.gameEntityToDto(savedGameEntity);
     }
-
 
 }

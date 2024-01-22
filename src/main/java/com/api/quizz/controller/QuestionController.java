@@ -1,7 +1,6 @@
 package com.api.quizz.controller;
 
-import com.api.quizz.controller.dto.CategoryDto;
-import com.api.quizz.controller.dto.QuestionDto;
+import com.api.quizz.controller.dto.question.QuestionDto;
 import com.api.quizz.service.QuestionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/question")
+@RequestMapping("api/questions")
 @RequiredArgsConstructor
 public class QuestionController {
 

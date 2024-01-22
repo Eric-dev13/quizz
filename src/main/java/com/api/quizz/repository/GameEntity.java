@@ -31,6 +31,9 @@ public class GameEntity {
     @JoinColumn(name = "player_id")
     private PlayerEntity player;
 
+    @Column(name= "title")
+    private String title;
+
     @ManyToMany
     @JoinTable(name = "game_categories",
             joinColumns = @JoinColumn(name = "game_id"),

@@ -2,6 +2,9 @@
 SET NAMES utf8mb4;
 SET CHARACTER SET utf8mb4;
 
+
+INSERT INTO player (id,created_at,email,password,pseudo) VALUES
+	 (1,'2024-01-18 10:08:47.367767','lova@gmail.com','$2a$10$kLc7BnGmiSEcYdEU6EiLtOkSo2syOZn0a1Z.jhBWspPkCLzvNVRlS','lova');
 ----
 ---- Déchargement des données de la table categorie
 ----
@@ -51,261 +54,213 @@ INSERT IGNORE INTO category (id, name) VALUES
     (43, 'Personnalité : Quiz "Quel personnage célèbre êtes-vous ?"');
 
 
+------------------------------------------------------------------------------------------
+--------------------------------------- GAME ID: 1 ---------------------------------------
+------------------------------------------------------------------------------------------
+INSERT INTO game (id, created_at, score, player_id, title) VALUES
+    (1,'2024-01-15 10:08:47.367767',NULL,NULL,'Capitales du monde !');
+
+INSERT INTO game_categories (game_id,categories_id) VALUES
+    (1,1);
+
 -- Insertion des questions quizz partie n°1
 INSERT IGNORE INTO question (id, title) VALUES
-(1, 'Quelle est la capitale de l''Espagne ?'),
-(2, 'Quelle est la capitale du Kenya ?'),
-(3, 'Quelle est la capitale de l''Indonésie ?'),
-(4, 'Quelle est la capitale du Pérou ?'),
-(5, 'Quelle est la capitale de la Turquie ?'),
-(6, 'Quelle est la capitale du Canada ?'),
-(7, 'Quelle est la capitale de l''Afrique du Sud ?'),
-(8, 'Quelle est la capitale de l''Égypte ?'),
-(9, 'Quelle est la capitale de la Suède ?'),
-(10, 'Quelle est la capitale de l''Australie ?');
+    (1, 'Quelle est la capitale de l\'Espagne ?'),
+    (2, 'Quelle est la capitale du Kenya ?'),
+    (3, 'Quelle est la capitale de l\'Indonésie ?'),
+    (4, 'Quelle est la capitale du Pérou ?'),
+    (5, 'Quelle est la capitale de la Turquie ?'),
+    (6, 'Quelle est la capitale du Canada ?'),
+    (7, 'Quelle est la capitale de l\'Afrique du Sud ?'),
+    (8, 'Quelle est la capitale de l\'Égypte ?'),
+    (9, 'Quelle est la capitale de la Suède ?'),
+    (10, 'Quelle est la capitale de l\'Australie ?');
 
--- Insertion des réponses classées par ID croissant
-INSERT IGNORE INTO answers (id, title) VALUES
-(1, 'Barcelone'),
-(2, 'Madrid'),
-(3, 'Lisbonne'),
-(4, 'Rome'),
-(5, 'Nairobi'),
-(6, 'Addis-Abeba'),
-(7, 'Accra'),
-(8, 'Kampala'),
-(9, 'Bangkok'),
-(10, 'Jakarta'),
-(11, 'Kuala Lumpur'),
-(12, 'Manille'),
-(13, 'Quito'),
-(14, 'Lima'),
-(15, 'Bogota'),
-(16, 'Caracas'),
-(17, 'Istanbul'),
-(18, 'Ankara'),
-(19, 'Athènes'),
-(20, 'Tbilissi'),
-(21, 'Vancouver'),
-(22, 'Toronto'),
-(23, 'Ottawa'),
-(24, 'Montréal'),
-(25, 'Calgary'),
-(26, 'Edmonton'),
-(27, 'Johannesbourg'),
-(28, 'Pretoria'),
-(29, 'Le Cap'),
-(30, 'Bloemfontein'),
-(31, 'Pretoria'),
-(32, 'Alexandrie'),
-(33, 'Le Caire'),
-(34, 'Sharm el-Sheikh'),
-(35, 'Louxor'),
-(36, 'Oslo'),
-(37, 'Helsinki'),
-(38, 'Stockholm'),
-(39, 'Copenhague'),
-(40, 'Sydney'),
-(41, 'Melbourne'),
-(42, 'Canberra'),
-(43, 'Brisbane');
+INSERT INTO game_questions (game_id,questions_id) VALUES
+     (1,1),
+     (1,2),
+     (1,3),
+     (1,4),
+     (1,5),
+     (1,6),
+     (1,7),
+     (1,8),
+     (1,9),
+     (1,10);
 
--- Insertion des liens entre questions et réponses correctes pour la Question 1
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(1, 0, 1, 1),   -- Question 1, réponse Barcelone incorrecte
-(2, 1, 2, 1),   -- Question 1, réponse Madrid correcte
-(3, 0, 3, 1),   -- Question 1, réponse Lisbonne incorrecte
-(4, 0, 4, 1);   -- Question 1, réponse Rome incorrecte
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (1, 1),
+    (2, 1),
+    (3, 1),
+    (4, 1),
+    (5, 1),
+    (6, 1),
+    (7, 1),
+    (8, 1),
+    (9, 1),
+    (10, 1);
 
--- Insertion des liens entre questions et réponses correctes pour la Question 2
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(5, 1, 5, 2),   -- Question 2, réponse Nairobi correcte
-(6, 0, 6, 2),   -- Question 2, réponse Addis-Abeba incorrecte
-(7, 0, 7, 2),   -- Question 2, réponse Accra incorrecte
-(8, 0, 8, 2);   -- Question 2, réponse Kampala incorrecte
+-- Insertion des réponses partie n°1
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1, 'Barcelone',0,1),
+    (2, 'Madrid',1,1),
+    (3, 'Lisbonne',0,1),
+    (4, 'Rome',0,1),
 
--- Insertion des liens entre questions et réponses correctes pour la Question 3
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(9, 0, 9, 3),   -- Question 3, réponse Bangkok incorrecte
-(10, 1, 10, 3),  -- Question 3, réponse Jakarta correcte
-(11, 0, 11, 3),  -- Question 3, réponse Kuala Lumpur incorrecte
-(12, 0, 12, 3);  -- Question 3, réponse Manille incorrecte
+    (5, 'Nairobi',1,2),
+    (6, 'Addis-Abeba',0,2),
+    (7, 'Accra',0,2),
+    (8, 'Kampala',0,2),
 
--- Insertion des liens entre questions et réponses correctes pour la Question 4
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(13, 0, 13, 4),  -- Question 4, réponse Quito incorrecte
-(14, 1, 14, 4),  -- Question 4, réponse Lima correcte
-(15, 0, 15, 4),  -- Question 4, réponse Bogota incorrecte
-(16, 0, 16, 4);  -- Question 4, réponse Caracas incorrecte
+    (9, 'Bangkok',0,3),
+    (10, 'Jakarta',1,3),
+    (11, 'Kuala Lumpur',0,3),
+    (12, 'Manille',0,3),
 
--- Insertion des liens entre questions et réponses correctes pour la Question 5
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(17, 0, 17, 5),  -- Question 5, réponse Istanbul incorrecte
-(18, 1, 18, 5),  -- Question 5, réponse Ankara correcte
-(19, 0, 19, 5),  -- Question 5, réponse Athènes incorrecte
-(20, 0, 20, 5);  -- Question 5, réponse Tbilissi incorrecte
+    (13, 'Quito',0,4),
+    (14, 'Lima',1,4),
+    (15, 'Bogota',0,4),
+    (16, 'Caracas',0,4),
 
--- Insertion des liens entre questions et réponses correctes pour la Question 6
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(21, 0, 21, 6),  -- Question 6, réponse Vancouver incorrecte
-(22, 0, 22, 6),  -- Question 6, réponse Toronto incorrecte
-(23, 1, 23, 6),  -- Question 6, réponse Ottawa correcte
-(24, 0, 24, 6);  -- Question 6, réponse Montréal incorrecte
+    (17, 'Istanbul',0,5),
+    (18, 'Ankara',1,5),
+    (19, 'Athènes',0,5),
+    (20, 'Tbilissi',0,5),
 
--- Insertion des liens entre questions et réponses correctes pour la Question 7
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(25, 0, 25, 7),  -- Question 7, réponse Calgary incorrecte
-(26, 0, 26, 7),  -- Question 7, réponse Edmonton incorrecte
-(27, 0, 27, 7),  -- Question 7, réponse Johannesbourg incorrecte
-(28, 1, 28, 7),  -- Question 7, réponse Pretoria correcte
-(29, 0, 29, 7),  -- Question 7, réponse Le Cap incorrecte
-(30, 0, 30, 7);  -- Question 7, réponse Bloemfontein incorrecte
+    (21, 'Vancouver',0,6),
+    (22, 'Toronto',0,6),
+    (23, 'Ottawa',1,6),
+    (24, 'Montréal',0,6),
 
--- Insertion des liens entre questions et réponses correctes pour la Question 8
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(31, 0, 31, 8),  -- Question 8, réponse Pretoria incorrecte
-(32, 0, 32, 8),  -- Question 8, réponse Alexandrie incorrecte
-(33, 1, 33, 8),  -- Question 8, réponse Le Caire correcte
-(34, 0, 34, 8);  -- Question 8, réponse Sharm el-Sheikh incorrecte
+    (25, 'Calgary',0,7),
+    (26, 'Edmonton',0,7),
+    (27, 'Johannesbourg',0,7),
+    (28, 'Pretoria',1,7),
+    (29, 'Le Cap',0,7),
+    (30, 'Bloemfontein',0,7),
 
--- Insertion des liens entre questions et réponses correctes pour la Question 9
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(35, 0, 35, 9),  -- Question 9, réponse Louxor incorrecte
-(36, 0, 36, 9),  -- Question 9, réponse Oslo incorrecte
-(37, 0, 37, 9),  -- Question 9, réponse Helsinki incorrecte
-(38, 1, 38, 9);  -- Question 9, réponse Stockholm correcte
+    (31, 'Pretoria',0,8),
+    (32, 'Alexandrie',0,8),
+    (33, 'Le Caire',1,8),
+    (34, 'Sharm el-Sheikh',0,8),
 
--- Insertion des liens entre questions et réponses correctes pour la Question 10
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(39, 0, 39, 10),  -- Question 10, réponse Copenhague incorrecte
-(40, 0, 40, 10),  -- Question 10, réponse Sydney incorrecte
-(41, 0, 41, 10),  -- Question 10, réponse Melbourne incorrecte
-(42, 1, 42, 10);  -- Question 10, réponse Canberra correcte
+    (35, 'Louxor',0,9),
+    (36, 'Oslo',0,9),
+    (37, 'Helsinki',0,9),
+    (38, 'Stockholm',1,9),
+
+    (39, 'Copenhague',0,10),
+    (40, 'Sydney',0,10),
+    (41, 'Melbourne',0,10),
+    (42, 'Canberra',1,10),
+    (43, 'Brisbane',0,10);
 
 
--- Table des questions quizz partie n°2
+------------------------------------------------------------------------------------------
+--------------------------------------- GAME ID: 2 ---------------------------------------
+------------------------------------------------------------------------------------------
+INSERT INTO game (id, created_at, score, player_id, title) VALUES
+    (2,'2024-01-15 10:08:47.367767',NULL,NULL,'Événements Clés de l\'Histoire Mondiale');
+
+INSERT INTO game_categories (game_id, categories_id) VALUES
+    (2,4);
+
 INSERT IGNORE INTO question (id, title) VALUES
-(11, 'Quelle capitale est célèbre pour son opéra situé sur la place de la Bastille ?'),
-(12, 'Dans quelle capitale sud-américaine se trouve la célèbre statue du Christ Rédempteur ?'),
-(13, 'Quelle capitale européenne est traversée par la rivière Danube ?'),
-(14, 'Dans quelle capitale asiatique se trouve le célèbre temple du Bouddha d\'émeraude ?'),
-(15, 'Quelle capitale africaine est située sur les rives du fleuve Niger ?'),
-(16, 'Quelle capitale nord-américaine est célèbre pour son opéra situé à Covent Garden ?'),
-(17, 'Dans quelle capitale européenne se trouve la cathédrale Saint-Basile sur la place Rouge ?'),
-(18, 'Quelle capitale asiatique est célèbre pour ses temples, dont le Wat Arun et le Wat Pho ?'),
-(19, 'Quelle capitale européenne est traversée par le fleuve Tibre ?'),
-(20, 'Dans quelle capitale africaine se trouve le musée national du Kenya, abritant des découvertes archéologiques ?');
+    (11, 'Quel événement a marqué le début de la Première Guerre mondiale ?'),
+    (12, 'Où a eu lieu la Déclaration d\'indépendance des États-Unis en 1776 ?'),
+    (13, 'Quel empereur romain a construit le Colisée de Rome ?'),
+    (14, 'Quelle révolution a conduit à la chute de la monarchie en France en 1789 ?'),
+    (15, 'Quel événement a déclenché la Guerre froide ?'),
+    (16, 'Où a eu lieu la bataille de Gettysburg pendant la Guerre de Sécession américaine ?'),
+    (17, 'Quelle reine d\'Égypte est célèbre pour sa liaison avec Marc Antoine et Jules César ?'),
+    (18, 'Quel événement a marqué la fin de la Guerre du Vietnam ?'),
+    (19, 'Quelle découverte archéologique a permis de déchiffrer les hiéroglyphes égyptiens ?'),
+    (20, 'Quel événement a déclenché la Révolution russe de 1917 ?');
 
--- Table des réponses quizz partie n°2
-INSERT IGNORE INTO answers (id, title) VALUES
-(44, 'Paris'),
-(45, 'Madrid'),
-(46, 'Vienne'),
-(47, 'Berlin'),
-(48, 'Rio de Janeiro'),
-(49, 'Buenos Aires'),
-(50, 'Bogota'),
-(51, 'Lima'),
-(52, 'Budapest'),
-(53, 'Vienne'),
-(54, 'Prague'),
-(55, 'Varsovie'),
-(56, 'Bangkok'),
-(57, 'Pékin'),
-(58, 'Tokyo'),
-(59, 'Séoul'),
-(60, 'Bamako'),
-(61, 'Dakar'),
-(62, 'Accra'),
-(63, 'Nairobi'),
-(64, 'Londres'),
-(65, 'New York'),
-(66, 'Toronto'),
-(67, 'Mexico'),
-(68, 'Moscou'),
-(69, 'Berlin'),
-(70, 'Varsovie'),
-(71, 'Bangkok'),
-(72, 'Pékin'),
-(73, 'Tokyo'),
-(74, 'Delhi'),
-(75, 'Rome'),
-(76, 'Madrid'),
-(77, 'Prague'),
-(78, 'Paris'),
-(79, 'Nairobi'),
-(80, 'Le Caire'),
-(81, 'Pretoria'),
-(82, 'Rabat');
+INSERT INTO game_questions (game_id,questions_id) VALUES
+     (2,11),
+     (2,12),
+     (2,13),
+     (2,14),
+     (2,15),
+     (2,16),
+     (2,17),
+     (2,18),
+     (2,19),
+     (2,20);
 
--- Table des liens entre questions et réponses quizz partie n°2
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(83, 1, 44, 11),  -- Question 11, réponse correcte Paris
-(84, 0, 45, 11),  -- Question 11, réponse Madrid incorrecte
-(85, 0, 46, 11),  -- Question 11, réponse Vienne incorrecte
-(86, 0, 47, 11);  -- Question 11, réponse Berlin incorrecte
+-- Liaisons entre questions et catégories
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (11, 4), (12, 4), (13, 4), (14, 4), (15, 4), (16, 4), (17, 4), (18, 4), (19, 4), (20, 4);
 
--- Table des liens entre questions et réponses correctes pour la Question 12
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(87, 0, 48, 12),  -- Question 12, réponse Buenos Aires incorrecte
-(88, 1, 49, 12),  -- Question 12, réponse correcte Rio de Janeiro
-(89, 0, 50, 12),  -- Question 12, réponse Bogota incorrecte
-(90, 0, 51, 12);  -- Question 12, réponse Lima incorrecte
+-- Réponses
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    -- Réponses pour la question 11
+    (44, 'L\'assassinat de l\'archiduc François-Ferdinand', 1, 11),
+    (45, 'La bataille de Verdun', 0, 11),
+    (46, 'La signature du traité de Versailles', 0, 11),
+    (47, 'La révolution bolchevique', 0, 11),
+    (48, 'Le naufrage du Titanic', 0, 11),
 
--- Table des liens entre questions et réponses correctes pour la Question 13
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(91, 0, 52, 13),  -- Question 13, réponse Vienne incorrecte
-(92, 0, 53, 13),  -- Question 13, réponse Prague incorrecte
-(93, 1, 54, 13),  -- Question 13, réponse correcte Budapest
-(94, 0, 55, 13);  -- Question 13, réponse Varsovie incorrecte
+    -- Réponses pour la question 12
+    (49, 'Philadelphie', 0, 12),
+    (50, 'Washington D.C.', 0, 12),
+    (51, 'Boston', 0, 12),
+    (52, 'New York', 0, 12),
+    (53, 'Independence Hall, Philadelphie', 1, 12),
 
--- Table des liens entre questions et réponses correctes pour la Question 14
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(95, 0, 56, 14),  -- Question 14, réponse Pékin incorrecte
-(96, 0, 57, 14),  -- Question 14, réponse Tokyo incorrecte
-(97, 1, 58, 14),  -- Question 14, réponse correcte Bangkok
-(98, 0, 59, 14);  -- Question 14, réponse Séoul incorrecte
+    -- Réponses pour la question 13
+    (54, 'Auguste', 0, 13),
+    (55, 'Caligula', 0, 13),
+    (56, 'Néron', 0, 13),
+    (57, 'Vespasien', 0, 13),
+    (58, 'Titus', 1, 13),
 
--- Table des liens entre questions et réponses correctes pour la Question 15
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(99, 0, 60, 15),   -- Question 15, réponse Dakar incorrecte
-(100, 0, 61, 15),  -- Question 15, réponse Accra incorrecte
-(101, 0, 62, 15),  -- Question 15, réponse Nairobi incorrecte
-(102, 1, 63, 15);  -- Question 15, réponse correcte Bamako
+    -- Réponses pour la question 14
+    (59, 'La Révolution industrielle', 0, 14),
+    (60, 'La Révolution américaine', 0, 14),
+    (61, 'La Révolution française', 1, 14),
+    (62, 'La Révolution russe', 0, 14),
+    (63, 'La Révolution chinoise', 0, 14),
 
--- Table des liens entre questions et réponses correctes pour la Question 16
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(103, 0, 64, 16),  -- Question 16, réponse Londres incorrecte
-(104, 0, 65, 16),  -- Question 16, réponse New York incorrecte
-(105, 0, 66, 16),  -- Question 16, réponse Toronto incorrecte
-(106, 1, 67, 16);  -- Question 16, réponse correcte Mexico
+    -- Réponses pour la question 15
+    (64, 'La conférence de Yalta', 0, 15),
+    (65, 'La construction du mur de Berlin', 1, 15),
+    (66, 'La crise des missiles de Cuba', 0, 15),
+    (67, 'L\'assassinat de John F. Kennedy', 0, 15),
+    (68, 'Le lancement du satellite Spoutnik', 0, 15),
 
--- Table des liens entre questions et réponses correctes pour la Question 17
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(107, 0, 68, 17),  -- Question 17, réponse Moscou incorrecte
-(108, 1, 69, 17),  -- Question 17, réponse correcte Berlin
-(109, 0, 70, 17),  -- Question 17, réponse Varsovie incorrecte
-(110, 0, 71, 17);  -- Question 17, réponse Bangkok incorrecte
+    -- Réponses pour la question 16
+    (69, 'Gettysburg, Pennsylvanie', 1, 16),
+    (70, 'Richmond, Virginie', 0, 16),
+    (71, 'Charleston, Caroline du Sud', 0, 16),
+    (72, 'Antietam, Maryland', 0, 16),
+    (73, 'Shiloh, Tennessee', 0, 16),
 
--- Table des liens entre questions et réponses correctes pour la Question 18
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(111, 0, 72, 18),  -- Question 18, réponse Pékin incorrecte
-(112, 0, 73, 18),  -- Question 18, réponse Tokyo incorrecte
-(113, 1, 74, 18),  -- Question 18, réponse correcte Delhi
-(114, 0, 75, 18);  -- Question 18, réponse Rome incorrecte
+    -- Réponses pour la question 17
+    (74, 'Cleopâtre VII', 1, 17),
+    (75, 'Néfertiti', 0, 17),
+    (76, 'Hatshepsout', 0, 17),
+    (77, 'Thoutmôsis III', 0, 17),
+    (78, 'Ramsès II', 0, 17),
 
--- Table des liens entre questions et réponses correctes pour la Question 19
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(115, 0, 76, 19),  -- Question 19, réponse Paris incorrecte
-(116, 0, 77, 19),  -- Question 19, réponse Madrid incorrecte
-(117, 0, 78, 19),  -- Question 19, réponse Prague incorrecte
-(118, 1, 79, 19);  -- Question 19, réponse correcte Nairobi
+    -- Réponses pour la question 18
+    (79, 'La chute de Saïgon', 1, 18),
+    (80, 'La bataille de Huế', 0, 18),
+    (81, 'L\'accord de Paris', 0, 18),
+    (82, 'La trêve de Noël', 0, 18),
+    (83, 'Le retrait des troupes américaines', 0, 18),
 
--- Table des liens entre questions et réponses correctes pour la Question 20
-INSERT IGNORE INTO answers_questions (id, is_correct, answers_id, question_id) VALUES
-(119, 0, 80, 20),  -- Question 20, réponse Le Caire incorrecte
-(120, 0, 81, 20),  -- Question 20, réponse Pretoria incorrecte
-(121, 0, 82, 20),  -- Question 20, réponse Rabat incorrecte
-(122, 1, 83, 20);  -- Question 20, réponse correcte Le Caire
+    -- Réponses pour la question 19
+    (84, 'La pierre de Rosette', 1, 19),
+    (85, 'Les tablettes d\'argile de l\'Assyrie', 0, 19),
+    (86, 'Les manuscrits de la mer Morte', 0, 19),
+    (87, 'Les statues de l\'île de Pâques', 0, 19),
+    (88, 'Le tombeau de Toutânkhamon', 0, 19),
 
-
+    -- Réponses pour la question 20
+    (89, 'La révolte de février', 0, 20),
+    (90, 'L\'abdication de Nicolas II', 0, 20),
+    (91, 'L\'assassinat de Raspoutine', 0, 20),
+    (92, 'La bataille du Chemin des Dames', 0, 20),
+    (93, 'La révolution d''Octobre', 1, 20);
