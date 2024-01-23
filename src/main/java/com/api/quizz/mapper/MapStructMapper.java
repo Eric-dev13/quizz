@@ -3,7 +3,9 @@ package com.api.quizz.mapper;
 import com.api.quizz.controller.dto.answers.AnswersDto;
 import com.api.quizz.controller.dto.category.CategoryDto;
 import com.api.quizz.controller.dto.game.GameDto;
+import com.api.quizz.controller.dto.player.GameForPlayerDto;
 import com.api.quizz.controller.dto.player.PlayerDto;
+import com.api.quizz.controller.dto.player.QuestionForPlayerDto;
 import com.api.quizz.controller.dto.question.AnswersForQuestionDto;
 import com.api.quizz.controller.dto.question.CategoryForQuestionDto;
 import com.api.quizz.controller.dto.question.GameForQuestionDto;
@@ -29,11 +31,16 @@ public interface MapStructMapper {
     AnswersDto answerseEntityToDto(AnswersEntity answersEntity);
     AnswersEntity answersDtoToEntity(AnswersDto answersDto);
 
-    /* PARTIE */
+    /* GAME */
     GameDto gameEntityToDto(GameEntity gameEntity);
     GameEntity gameDtoToEntity(GameDto gameDto);
 
-    /* JOUEUR */
+    /* PLAYER */
     PlayerDto playerEntityToDto(PlayerEntity playerEntity);
     PlayerEntity playerDtoToEntity(PlayerDto playerDto);
+
+    GameForPlayerDto gameEntityToGamePlayerDto(GameEntity gameEntity);
+
+    QuestionForPlayerDto questionEntityToQuestionForPlayerDto(QuestionEntity questionEntity);
+
 }

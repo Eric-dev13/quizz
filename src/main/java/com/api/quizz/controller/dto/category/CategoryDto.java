@@ -13,6 +13,4 @@ public class CategoryDto {
     private Long id;
     @NotBlank
     private String name;
-    // private List<GameDto> games = new ArrayList<>();
-    // private List<QuestionDto> questions = new ArrayList<>();
 }

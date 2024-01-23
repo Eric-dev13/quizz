@@ -38,8 +38,7 @@ public class SecurityConfigurer {
             .authorizeHttpRequests(r -> {
                 // r.requestMatchers("/api/v1/**").authenticated();
                 r.requestMatchers("/api/admin/**").hasAuthority("ADMIN");
-                r.requestMatchers("/api/professor/**").hasAuthority("PROFESSOR");
-                r.requestMatchers("/api/student/**").hasAuthority("STUDENT");
+                r.requestMatchers("/api/user/**").hasAuthority("PROFESSOR");
                 r.anyRequest().permitAll();
             });
         return http.build();
