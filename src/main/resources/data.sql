@@ -282,9 +282,9 @@ INSERT IGNORE INTO question (id, title) VALUES
 
 -- Réponses pour la question 21 (Afghanistan)
 INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
-(94, 'Kaboul', 1, 21),
+(94, 'Hérat', 0, 21),
 (95, 'Kandahar', 0, 21),
-(96, 'Hérat', 0, 21),
+(96, 'Kaboul', 1, 21),
 (97, 'Mazar-e-Charif', 0, 21);
 
 -- Question 21 liée à la catégorie "Capitales"
@@ -299,10 +299,10 @@ INSERT IGNORE INTO question (id, title) VALUES
 
 -- Réponses pour la question 22 (Albanie)
 INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
-(98, 'Tirana', 1, 22),
-(99, 'Durrës', 0, 22),
-(100, 'Vlorë', 0, 22),
-(101, 'Shkodër', 0, 22);
+(98, 'Durrës', 0, 22),
+(99, 'Vlorë', 0, 22),
+(100, 'Shkodër', 0, 22),
+(101, 'Tirana', 1, 22);
 
 -- Question 22 liée à la catégorie "Capitales"
 INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
@@ -333,48 +333,49 @@ INSERT IGNORE INTO question (id, title) VALUES
 
 -- Réponses pour la question 24 (Allemagne)
 INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
-(106, 'Berlin', 1, 24),
-(107, 'Hambourg', 0, 24),
+(106, 'Cologne', 0, 24),
+(107, 'Berlin', 1, 24),
 (108, 'Munich', 0, 24),
-(109, 'Cologne', 0, 24);
+(109, 'Hambourg', 0, 24);
 
 -- Question 24 liée à la catégorie "Capitales"
 INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
 (24, 1);
 
---- **************************
---- * Question 25 *
---- **************************
+-- **************************
+-- * Question 25 *
+-- **************************
 INSERT IGNORE INTO question (id, title) VALUES
 (25, "Quelle est la capitale de l'Andorre ?");
 
 -- Réponses pour la question 25 (Andorre)
 INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
-(110, 'Andorre-la-Vieille', 1, 25),
-(111, 'La Massana', 0, 25),
+(110, 'Canillo', 0, 25),
+(111, 'Andorre-la-Vieille', 1, 25),
 (112, 'Encamp', 0, 25),
-(113, 'Canillo', 0, 25);
+(113, 'La Massana', 0, 25);
 
 -- Question 25 liée à la catégorie "Capitales"
 INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
 (25, 1);
 
---- **************************
---- * Question 26 *
---- **************************
+-- **************************
+-- * Question 26 *
+-- **************************
 INSERT IGNORE INTO question (id, title) VALUES
 (26, "Quelle est la capitale de l'Angola ?");
 
 -- Réponses pour la question 26 (Angola)
 INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
-(114, 'Luanda', 1, 26),
-(115, 'Lubango', 0, 26),
-(116, 'Huambo', 0, 26),
-(117, 'Benguela', 0, 26);
+(114, 'Huambo', 0, 26),
+(115, 'Benguela', 0, 26),
+(116, 'Luanda', 1, 26),
+(117, 'Lubango', 0, 26);
 
 -- Question 26 liée à la catégorie "Capitales"
 INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
 (26, 1);
+
 
 --- **************************
 --- * Question 27 *
@@ -3525,14 +3526,6 @@ INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
 (196, 1);
 
 
-
-------------------------------------------------------------------------------------------
--------------------------------- Pays dans l'ordre alphabétiques -------------------------
-------------------------------------------------------------------------------------------
--- Questions
-
-
-
 ------------------------------------------------------------------------------------------
 -------------------------------- Développement web : HTML --------------------------------
 ------------------------------------------------------------------------------------------
@@ -4875,33 +4868,33 @@ INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
 
 
 ------------------------------------------------------------------------------------------
--------------------------------- Développement web : CSS --------------------------------
+-------------------------------- PHP --------------------------------
 ------------------------------------------------------------------------------------------
 INSERT IGNORE INTO category (id, name) VALUES
-    (47, 'Développement web : PHP');
+    (47, 'PHP');
 
 ------------------------------------------------------------------------------------------
--------------------------------- Développement web : CSS --------------------------------
+-------------------------------- SQL --------------------------------
 ------------------------------------------------------------------------------------------
 INSERT IGNORE INTO category (id, name) VALUES
-    (48, 'Développement web : SQL');
+    (48, 'SQL');
 
 ------------------------------------------------------------------------------------------
--------------------------------- Développement web : CSS --------------------------------
+-------------------------------- Spring Boot --------------------------------
 ------------------------------------------------------------------------------------------
 INSERT IGNORE INTO category (id, name) VALUES
-    (49, 'Développement Java : Spring Boot');
+    (49, 'Spring Boot');
 
 ------------------------------------------------------------------------------------------
--------------------------------- Développement web : CSS --------------------------------
+-------------------------------- Symfony --------------------------------
 ------------------------------------------------------------------------------------------
 INSERT IGNORE INTO category (id, name) VALUES
-    (50, 'Développement PHP : Symfony');
+    (50, 'Symfony');
 
 ------------------------------------------------------------------------------------------
--------------------------------- Développement web : CSS --------------------------------
+-------------------------------- Angular --------------------------------
 ------------------------------------------------------------------------------------------
 INSERT IGNORE INTO category (id, name) VALUES
-    (51, 'Développement web : Angular');
+    (51, 'Angular');
 
 

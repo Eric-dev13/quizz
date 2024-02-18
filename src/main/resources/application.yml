@@ -1,0 +1,71 @@
+# CONFIGURATION GENERALE
+# server.servlet.context-path=/le-royaume-des-champignons
+jwt:
+  signing:
+    key: signingKey
+
+# =======================
+#   PROFIL PAR DEFAUT
+# =======================
+spring:
+  profiles:
+    # profil a charger par d�faut defini dans application.yml
+    active: prod
+
+
+# ==========================
+#         PROFIL DEV
+# ==========================
+
+---
+
+domaine: http://localhost:4200
+server:
+  port: 8080
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/quizz?useUnicode=yes;characterEncoding=UTF-8
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  sql:
+    init:
+      encoding: UTF-8
+      mode: always
+
+
+
+# ==========================
+#         PROFIL PROD
+# ==========================
+
+---
+
+domaine: http://quizzmania.com
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:mariadb://localhost:3306/quizzmania?useUnicode=yes;characterEncoding=UTF-8
+    username: raspberry
+    password: auth-mysql-13
+    driverClassName: org.mariadb.jdbc.Driver
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  sql:
+    init:
+      encoding: UTF-8
+      mode: always
