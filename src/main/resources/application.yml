@@ -1,5 +1,20 @@
 # CONFIGURATION GENERALE
-# server.servlet.context-path=/le-royaume-des-champignons
+
+#server:
+#  servlet:
+#    context-path: /quizz-mania.ddns.net
+
+# SWAGGER - springdoc-openapi v2.3.0
+# http://localhost:8080/context-path/swagger-ui/index.html
+springdoc:
+  # Disabling the /v3/api-docs endpoint
+  api-docs:
+    enabled: true
+  # Disabling the swagger-ui
+  swagger-ui:
+    enabled: true
+
+
 jwt:
   signing:
     key: signingKey
@@ -9,16 +24,14 @@ jwt:
 # =======================
 spring:
   profiles:
-    # profil a charger par d�faut defini dans application.yml
-    active: prod
+    # profil a charger par défaut
+    active: dev
 
 
 # ==========================
 #         PROFIL DEV
 # ==========================
-
 ---
-
 domaine: http://localhost:4200
 server:
   port: 8080
@@ -29,28 +42,25 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/quizz?useUnicode=yes;characterEncoding=UTF-8
     username: root
-    password: root
+    password:
     driverClassName: com.mysql.cj.jdbc.Driver
   jpa:
     defer-datasource-initialization: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
   sql:
     init:
       encoding: UTF-8
-      mode: always
+      mode: never  # never,always
 
 
 
 # ==========================
 #         PROFIL PROD
 # ==========================
-
 ---
-
 domaine: http://quizzmania.com
-
 spring:
   config:
     activate:
