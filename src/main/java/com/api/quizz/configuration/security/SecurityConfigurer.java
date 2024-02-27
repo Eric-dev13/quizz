@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -29,18 +30,20 @@ public class SecurityConfigurer {
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
         // Standard pour les REST API
         http
-            .cors()
-            .and()
-            .csrf().disable()
-            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            .and()
+            // Désactive le partage de ressources entre origines (CORS), limitant par défaut les requêtes à la même origine.
+            .cors(cors -> cors.disable())
+            // Désactive la protection contre la falsification de requêtes intersites (CSRF), nécessaire pour les API REST sans sessions basées sur un navigateur.
+            .csrf(AbstractHttpConfigurer::disable)
+            // Définit une politique de session sans état, ce qui signifie que Spring Security ne créera ni ne gérera pas les sessions HTTP, conformément aux meilleures pratiques des API REST.
+            .sessionManagement(
+                    httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            )
+            // Ajoute un filtre personnalisé nommé securityFilter avant le UsernamePasswordAuthenticationFilter, logique d'authentification par Bearer.
             .addFilterBefore(securityFilter(),UsernamePasswordAuthenticationFilter.class)
-            .authorizeHttpRequests(r -> {
-                // r.requestMatchers("/api/v1/**").authenticated();
-                r.requestMatchers("/api/admin/**").hasAuthority("ADMIN");
-                r.requestMatchers("/api/professor/**").hasAuthority("PROFESSOR");
-                r.requestMatchers("/api/student/**").hasAuthority("STUDENT");
-                r.anyRequest().permitAll();
+            .authorizeHttpRequests(auth -> {
+                auth.requestMatchers("/api/players/**").authenticated();
+                auth.requestMatchers("/api/games/findAll").hasAuthority("ADMIN");
+                auth.anyRequest().permitAll();
             });
         return http.build();
     }

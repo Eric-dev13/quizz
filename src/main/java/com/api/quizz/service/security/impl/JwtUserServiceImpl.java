@@ -66,7 +66,7 @@ public class JwtUserServiceImpl implements JwtUserService {
         playerEntity.setEmail(username);
         playerEntity.setPassword(passwordEncoder.encode(password));
         playerEntity.setRole(Role.USER);
-        playerRepository.save(playerEntity);
+        PlayerEntity savedPlayer = playerRepository.save(playerEntity);
         return playerEntity;
     }
 

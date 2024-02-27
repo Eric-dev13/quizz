@@ -1,5 +1,7 @@
 package com.api.quizz.controller.dto.player;
 
+import com.api.quizz.controller.dto.category.CategoryDto;
+import com.api.quizz.controller.dto.question.QuestionDto;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
@@ -9,20 +11,15 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Data
 @NoArgsConstructor
-public class PlayerDto {
+public class GameForPlayerDto {
     private Long id;
     private LocalDateTime createdAt;
-    private String pseudo;
-    // private Role role;
-    private String email;
-    private String password;
-
-    private List<GameForPlayerDto> games = new ArrayList<>();
-
-    public PlayerDto(String pseudo, String email) {
-        this.pseudo = pseudo;
-        this.email = email;
-    }
+    private Long score;
+    private Long playerId;
+    private String title;
+    private List<CategoryDto> categories = new ArrayList<>();
+    private List<QuestionForPlayerDto> questions = new ArrayList<>();
 }

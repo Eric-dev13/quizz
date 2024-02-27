@@ -1,0 +1,81 @@
+# CONFIGURATION GENERALE
+
+#server:
+#  servlet:
+#    context-path: /quizz-mania.ddns.net
+
+# SWAGGER - springdoc-openapi v2.3.0
+# http://localhost:8080/context-path/swagger-ui/index.html
+springdoc:
+  # Disabling the /v3/api-docs endpoint
+  api-docs:
+    enabled: true
+  # Disabling the swagger-ui
+  swagger-ui:
+    enabled: true
+
+
+jwt:
+  signing:
+    key: signingKey
+
+# =======================
+#   PROFIL PAR DEFAUT
+# =======================
+spring:
+  profiles:
+    # profil a charger par défaut
+    active: dev
+
+
+# ==========================
+#         PROFIL DEV
+# ==========================
+---
+domaine: http://localhost:4200
+server:
+  port: 8080
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/quizz?useUnicode=yes;characterEncoding=UTF-8
+    username: root
+    password:
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  sql:
+    init:
+      encoding: UTF-8
+      mode: never  # never,always
+
+
+
+# ==========================
+#         PROFIL PROD
+# ==========================
+---
+domaine: http://quizzmania.com
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:mariadb://localhost:3306/quizzmania?useUnicode=yes;characterEncoding=UTF-8
+    username: raspberry
+    password: auth-mysql-13
+    driverClassName: org.mariadb.jdbc.Driver
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  sql:
+    init:
+      encoding: UTF-8
+      mode: always

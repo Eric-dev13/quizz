@@ -2,6 +2,8 @@ package com.api.quizz.controller.dto.answers;
 
 
 import com.api.quizz.repository.QuestionEntity;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

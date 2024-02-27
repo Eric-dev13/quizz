@@ -9,6 +9,7 @@ import com.api.quizz.repository.CategoryEntity;
 import com.api.quizz.repository.QuestionEntity;
 import com.api.quizz.repository.QuestionRepository;
 import lombok.RequiredArgsConstructor;
+import org.mapstruct.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -58,8 +59,7 @@ public class QuestionService {
 
     public List<QuestionDto> generateGame(Long limit, List<String> categories) {
         List<QuestionEntity> questionEntities = questionRepository.findQuestionsByCategory(limit,categories);
-
-        List<QuestionDto> questionDtos = questionEntities.stream().map(mapStructMapper::questionEntityToDto).collect(Collectors.toList());
+        List<QuestionDto> questionDtos = questionEntities.stream().map(mapStructMapper::gameQuestionEntityToDto).collect(Collectors.toList());
 
         if(questionDtos.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No Question by categories found");
