@@ -52,4 +52,9 @@ public class CategoryService {
         CategoryEntity savedCategoryEntity = categoryRepository.save(originalCategoryEntity);
         return savedCategoryEntity != null;
     }
+
+    public List<CategoryDto> findAllWhereNameIn(String[] categories) {
+        List<CategoryEntity> categoryEntities = categoryRepository.findAllWhereNameIn(categories);
+        return categoryEntities.stream().map(mapStructMapper::categoryEntityToDto).collect(Collectors.toList());
+    }
 }

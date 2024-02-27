@@ -19,7 +19,6 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "player")
-@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class PlayerEntity implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

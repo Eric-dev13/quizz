@@ -11,11 +11,11 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
 public class PlayerDto {
     private Long id;
     private LocalDateTime createdAt;
     private String pseudo;
+    // private Role role;
     private String email;
     private String password;
 
