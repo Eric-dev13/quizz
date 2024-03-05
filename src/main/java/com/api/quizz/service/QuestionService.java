@@ -59,7 +59,7 @@ public class QuestionService {
 
     public List<QuestionDto> generateGame(Long limit, List<String> categories) {
         List<QuestionEntity> questionEntities = questionRepository.findQuestionsByCategory(limit,categories);
-        List<QuestionDto> questionDtos = questionEntities.stream().map(mapStructMapper::gameQuestionEntityToDto).collect(Collectors.toList());
+        List<QuestionDto> questionDtos = questionEntities.stream().map(mapStructMapper::questionEntityToDto).collect(Collectors.toList());
 
         if(questionDtos.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No Question by categories found");

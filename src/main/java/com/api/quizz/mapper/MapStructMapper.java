@@ -21,7 +21,7 @@ public interface MapStructMapper {
     /* -------------- */
     // ENTITY --> DTO + condition ignore
     @Mapping(target="player.games", ignore = true)
-    @Mapping(target="questions", qualifiedByName = "gameQuestionEntityToDto")
+    //@Mapping(target="questions", qualifiedByName = "gameQuestionEntityToDto")
     GameDto gameEntityToDto(GameEntity gameEntity);
 
     GameEntity gameDtoToEntity(GameDto gameDto);
@@ -31,13 +31,12 @@ public interface MapStructMapper {
     /*    QUESTION    */
     /* -------------- */
     // ENTITY --> DTO
-    @Mapping(target="games", ignore = true)
     QuestionDto questionEntityToDto(QuestionEntity questionEntity);
 
     // ENTITY --> DTO + condition ignore GAME
-    @Mapping(target="games", ignore = true, qualifiedByName = "gameQuestionEntityToDto")
-    @Named("gameQuestionEntityToDto")
-    QuestionDto gameQuestionEntityToDto(QuestionEntity questionEntity);
+    //@Mapping(target="games", ignore = true, qualifiedByName = "gameQuestionEntityToDto")
+    //@Named("gameQuestionEntityToDto")
+    //QuestionDto gameQuestionEntityToDto(QuestionEntity questionEntity);
 
     QuestionEntity questionDtoToEntity(QuestionDto questionDto);
 //    GameForQuestionDto gameEntityToGameEntity(GameEntity gameEntity);

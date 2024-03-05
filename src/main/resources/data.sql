@@ -15,8 +15,7 @@ INSERT INTO player (id,created_at,email,password,pseudo, role) VALUES
 INSERT IGNORE INTO category (id, name) VALUES
     (1, 'Géographie : Capitales'),
     (2, 'Géographie : Pays et régions'),
---    (3, 'Géographie : Géographie physique'),
-    (4, 'Histoire : Événements historiques');
+    (3, 'Géographie : Géographie physique');
 --    (5, 'Histoire : Personnalités historiques'),
 --    (6, 'Histoire : Périodes historiques'),
 --    (7, 'Culture générale : Sciences'),
@@ -4897,4 +4896,613 @@ INSERT IGNORE INTO category (id, name) VALUES
 INSERT IGNORE INTO category (id, name) VALUES
     (51, 'Angular');
 
+------------------------------------------------------------------------------------------
+-------------------------------- Anglais --------------------------------
+------------------------------------------------------------------------------------------
+INSERT IGNORE INTO category (id, name) VALUES
+    (52, 'Anglais : Niveau A1');
 
+--- **************************
+--  ** Question 270
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (270, "Complétez la phrase avec le mot correct : I ____ a student.");
+
+-- Réponses pour la question 270
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1420, "a) am", 1, 270),
+    (1421, "b) is", 0, 270),
+    (1422, "c) are", 0, 270),
+    (1423, "d) be", 0, 270);
+
+-- Liaison de la question 270 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (270, 52);
+
+--- **************************
+--  ** Question 271
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (271, "Sélectionnez la traduction correcte : 'Hello'");
+
+-- Réponses pour la question 271
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1424, "a) Bonjour", 1, 271),
+    (1425, "b) Merci", 0, 271),
+    (1426, "c) Excusez-moi", 0, 271),
+    (1427, "d) Au revoir", 0, 271);
+
+-- Liaison de la question 271 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (271, 52);
+
+--- **************************
+--  ** Question 272
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (272, "Quel est le contraire de 'happy'?");
+
+-- Réponses pour la question 272
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1428, "a) Sad", 1, 272),
+    (1429, "b) Angry", 0, 272),
+    (1430, "c) Excited", 0, 272),
+    (1431, "d) Tired", 0, 272);
+
+-- Liaison de la question 272 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (272, 52);
+
+--- **************************
+--  ** Question 273
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (273, "Complétez la phrase : My sister ____ a doctor.");
+
+-- Réponses pour la question 273
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1432, "a) is", 1, 273),
+    (1433, "b) are", 0, 273),
+    (1434, "c) am", 0, 273),
+    (1435, "d) be", 0, 273);
+
+-- Liaison de la question 273 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (273, 52);
+
+--- **************************
+--  ** Question 274
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (274, "Choisissez le mot incorrect : Dog, Cat, Table, Banana");
+
+-- Réponses pour la question 274
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1436, "a) Table", 0, 274),
+    (1437, "b) Cat", 0, 274),
+    (1438, "c) Banana", 0, 274),
+    (1439, "d) Dog", 1, 274);
+
+-- Liaison de la question 274 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (274, 52);
+
+--- **************************
+--  ** Question 275
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (275, "Quelle est la couleur du ciel par une journée ensoleillée?");
+
+-- Réponses pour la question 275
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1440, "a) Blue", 1, 275),
+    (1441, "b) Red", 0, 275),
+    (1442, "c) Green", 0, 275),
+    (1443, "d) Yellow", 0, 275);
+
+-- Liaison de la question 275 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (275, 52);
+
+--- **************************
+--  ** Question 276
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (276, "Sélectionnez le mot qui ne correspond pas aux autres : Apple, Banana, Carrot, Table");
+
+-- Réponses pour la question 276
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1444, "a) Table", 1, 276),
+    (1445, "b) Apple", 0, 276),
+    (1446, "c) Banana", 0, 276),
+    (1447, "d) Carrot", 0, 276);
+
+-- Liaison de la question 276 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (276, 52);
+
+--- **************************
+--  ** Question 277
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (277, "Complétez la phrase : The sun ____ in the morning.");
+
+-- Réponses pour la question 277
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1448, "a) rises", 1, 277),
+    (1449, "b) is rising", 0, 277),
+    (1450, "c) rise", 0, 277),
+    (1451, "d) rising", 0, 277);
+
+-- Liaison de la question 277 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (277, 52);
+
+--- **************************
+--  ** Question 278
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (278, "Quel est le mot correct pour décrire quelque chose qui n'est pas lourd?");
+
+-- Réponses pour la question 278
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1452, "a) Light", 1, 278),
+    (1453, "b) Heavy", 0, 278),
+    (1454, "c) Dark", 0, 278),
+    (1455, "d) Strong", 0, 278);
+
+-- Liaison de la question 278 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (278, 52);
+
+--- **************************
+--  ** Question 279
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (279, "Quelle est la couleur du feu de circulation qui signifie 'arrêt' ?");
+
+-- Réponses pour la question 279
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1456, "a) Rouge", 1, 279),
+    (1457, "b) Vert", 0, 279),
+    (1458, "c) Jaune", 0, 279),
+    (1459, "d) Bleu", 0, 279);
+
+-- Liaison de la question 279 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (279, 52);
+
+--- **************************
+--  ** Question 280
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (280, "Sélectionnez le mot qui ne correspond pas aux autres : Square, Triangle, Circle, Car");
+
+-- Réponses pour la question 280
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1460, "a) Car", 1, 280),
+    (1461, "b) Square", 0, 280),
+    (1462, "c) Triangle", 0, 280),
+    (1463, "d) Circle", 0, 280);
+
+-- Liaison de la question 280 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (280, 52);
+
+--- **************************
+--  ** Question 281
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (281, "Complétez la phrase : My brother ____ football every weekend.");
+
+-- Réponses pour la question 281
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1464, "a) plays", 1, 281),
+    (1465, "b) play", 0, 281),
+    (1466, "c) playing", 0, 281),
+    (1467, "d) played", 0, 281);
+
+-- Liaison de la question 281 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (281, 52);
+
+--- **************************
+--  ** Question 282
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (282, "Quel est le mot pour décrire une personne qui travaille dans un hôpital et aide les médecins?");
+
+-- Réponses pour la question 282
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1468, "a) Nurse", 1, 282),
+    (1469, "b) Teacher", 0, 282),
+    (1470, "c) Pilot", 0, 282),
+    (1471, "d) Chef", 0, 282);
+
+-- Liaison de la question 282 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (282, 52);
+
+--- **************************
+--  ** Question 283
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (283, "Quelle est la couleur du soleil?");
+
+-- Réponses pour la question 283
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1472, "a) Yellow", 1, 283),
+    (1473, "b) Orange", 0, 283),
+    (1474, "c) Red", 0, 283),
+    (1475, "d) White", 0, 283);
+
+-- Liaison de la question 283 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (283, 52);
+
+--- **************************
+--  ** Question 284
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (284, "Quel est le mot correct pour décrire quelque chose qui est très froid?");
+
+-- Réponses pour la question 284
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1476, "a) Cold", 1, 284),
+    (1477, "b) Hot", 0, 284),
+    (1478, "c) Warm", 0, 284),
+    (1479, "d) Cool", 0, 284);
+
+-- Liaison de la question 284 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (284, 52);
+
+--- **************************
+--  ** Question 285
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (285, "Complétez la phrase : They ____ watching TV.");
+
+-- Réponses pour la question 285
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1480, "a) are", 1, 285),
+    (1481, "b) is", 0, 285),
+    (1482, "c) am", 0, 285),
+    (1483, "d) be", 0, 285);
+
+-- Liaison de la question 285 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (285, 52);
+
+--- **************************
+--  ** Question 286
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (286, "Sélectionnez le mot qui signifie la même chose que 'happy'.");
+
+-- Réponses pour la question 286
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1484, "a) Joyful", 1, 286),
+    (1485, "b) Sad", 0, 286),
+    (1486, "c) Angry", 0, 286),
+    (1487, "d) Tired", 0, 286);
+
+-- Liaison de la question 286 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (286, 52);
+
+--- **************************
+--  ** Question 287
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (287, "Quel est le mot pour décrire le contraire de 'big'?");
+
+-- Réponses pour la question 287
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1488, "a) Small", 1, 287),
+    (1489, "b) Tall", 0, 287),
+    (1490, "c) Wide", 0, 287),
+    (1491, "d) Heavy", 0, 287);
+
+-- Liaison de la question 287 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (287, 52);
+
+--- **************************
+--  ** Question 288
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (288, "Sélectionnez le mot qui signifie la même chose que 'friend'.");
+
+-- Réponses pour la question 288
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1492, "a) Companion", 1, 288),
+    (1493, "b) Enemy", 0, 288),
+    (1494, "c) Stranger", 0, 288),
+    (1495, "d) Foe", 0, 288);
+
+-- Liaison de la question 288 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (288, 52);
+
+--- **************************
+--  ** Question 289
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (289, "Quel est le mot correct pour décrire quelque chose qui est très lent?");
+
+-- Réponses pour la question 289
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1496, "a) Slow", 1, 289),
+    (1497, "b) Fast", 0, 289),
+    (1498, "c) Quick", 0, 289),
+    (1499, "d) Rapid", 0, 289);
+
+-- Liaison de la question 289 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (289, 52);
+
+--- **************************
+--  ** Question 290
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (290, "Sélectionnez le mot qui signifie la même chose que 'buy'.");
+
+-- Réponses pour la question 290
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1500, "a) Purchase", 1, 290),
+    (1501, "b) Sell", 0, 290),
+    (1502, "c) Trade", 0, 290),
+    (1503, "d) Borrow", 0, 290);
+
+-- Liaison de la question 290 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (290, 52);
+
+--- **************************
+--  ** Question 291
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (291, "Complétez la phrase : I ____ at 8 AM every day.");
+
+-- Réponses pour la question 291
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1504, "a) wake up", 1, 291),
+    (1505, "b) wake", 0, 291),
+    (1506, "c) waking up", 0, 291),
+    (1507, "d) wakes up", 0, 291);
+
+-- Liaison de la question 291 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (291, 52);
+
+--- **************************
+--  ** Question 292
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (292, "Quel est le mot pour décrire le contraire de 'sad'?");
+
+-- Réponses pour la question 292
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1508, "a) Happy", 1, 292),
+    (1509, "b) Angry", 0, 292),
+    (1510, "c) Tired", 0, 292),
+    (1511, "d) Excited", 0, 292);
+
+-- Liaison de la question 292 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (292, 52);
+
+--- **************************
+--  ** Question 293
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (293, "Sélectionnez le mot qui ne correspond pas aux autres : Monday, April, Saturday, March");
+
+-- Réponses pour la question 293
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1512, "a) April", 0, 293),
+    (1513, "b) Monday", 0, 293),
+    (1514, "c) Saturday", 0, 293),
+    (1515, "d) March", 1, 293);
+
+-- Liaison de la question 293 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (293, 52);
+
+--- **************************
+--  ** Question 294
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (294, "Sélectionnez les couleurs primaires.");
+
+-- Réponses pour la question 294
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1516, "a) Red", 1, 294),
+    (1517, "b) Blue", 1, 294),
+    (1518, "c) Green", 1, 294),
+    (1519, "d) Yellow", 1, 294),
+    (1520, "e) Orange", 0, 294),
+    (1521, "f) Purple", 0, 294),
+    (1522, "g) Pink", 0, 294),
+    (1523, "h) Brown", 0, 294);
+
+-- Liaison de la question 294 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (294, 52);
+
+--- **************************
+--  ** Question 295
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (295, "Select the days of the week.");
+
+-- Réponses pour la question 295
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1524, "a) Monday", 1, 295),
+    (1525, "b) Tuesday", 1, 295),
+    (1526, "c) Wednesday", 1, 295),
+    (1527, "d) Thursday", 1, 295),
+    (1528, "e) Friday", 1, 295),
+    (1529, "f) Saturday", 1, 295),
+    (1530, "g) Sunday", 1, 295),
+    (1531, "h) February", 0, 295);
+
+-- Liaison de la question 295 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (295, 52);
+
+--- **************************
+--  ** Question 296
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (296, "Select the objects typically used for writing.");
+
+-- Réponses pour la question 296
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1532, "a) Pencil", 1, 296),
+    (1533, "b) Pen", 1, 296),
+    (1534, "c) Eraser", 1, 296),
+    (1535, "d) Notebook", 1, 296),
+    (1536, "e) Calculator", 0, 296),
+    (1537, "f) Coffee Mug", 0, 296);
+
+-- Liaison de la question 296 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (296, 52);
+
+--- **************************
+--  ** Question 297
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (297, "Select the months of the year.");
+
+-- Réponses pour la question 297
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1540, "a) January", 1, 297),
+    (1541, "b) February", 1, 297),
+    (1542, "c) March", 1, 297),
+    (1543, "d) April", 1, 297),
+    (1544, "e) May", 1, 297),
+    (1545, "f) June", 1, 297),
+    (1546, "g) July", 1, 297),
+    (1547, "h) August", 1, 297);
+
+-- Liaison de la question 297 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (297, 52);
+
+--- **************************
+--  ** Question 298
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (298, "Select the parts of the human body.");
+
+-- Réponses pour la question 298
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1548, "a) Head", 1, 298),
+    (1549, "b) Arm", 1, 298),
+    (1550, "c) Leg", 1, 298),
+    (1551, "d) Hand", 1, 298),
+    (1552, "e) Foot", 1, 298),
+    (1553, "f) Ear", 1, 298),
+    (1554, "g) Nose", 1, 298),
+    (1555, "h) Laptop", 0, 298);
+
+-- Liaison de la question 298 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (298, 52);
+--- **************************
+--  ** Question 299
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (299, "Select the fruits from the following.");
+
+-- Réponses pour la question 299
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1556, "a) Apple", 1, 299),
+    (1557, "b) Banana", 1, 299),
+    (1558, "c) Carrot", 0, 299),
+    (1559, "d) Orange", 1, 299),
+    (1560, "e) Tomato", 0, 299),
+    (1561, "f) Mango", 1, 299);
+
+-- Liaison de la question 299 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (299, 52);
+
+--- **************************
+--  ** Question 300
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (300, "Select the animals that can fly.");
+
+-- Réponses pour la question 300
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1562, "a) Bird", 1, 300),
+    (1563, "b) Butterfly", 1, 300),
+    (1564, "c) Fish", 0, 300),
+    (1565, "d) Snake", 0, 300),
+    (1566, "e) Bat", 1, 300),
+    (1567, "f) Elephant", 0, 300);
+
+-- Liaison de la question 300 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (300, 52);
+
+--- **************************
+--  ** Question 301
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (301, "Select the warm colors.");
+
+-- Réponses pour la question 301
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1568, "a) Red", 1, 301),
+    (1569, "b) Blue", 0, 301),
+    (1570, "c) Yellow", 1, 301),
+    (1571, "d) Green", 0, 301),
+    (1572, "e) Orange", 1, 301),
+    (1573, "f) Purple", 0, 301);
+
+-- Liaison de la question 301 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (301, 52);
+
+--- **************************
+--  ** Question 302
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (302, "Select the European countries.");
+
+-- Réponses pour la question 302
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1574, "a) France", 1, 302),
+    (1575, "b) Italy", 1, 302),
+    (1576, "c) Germany", 1, 302),
+    (1577, "d) Spain", 0, 302),
+    (1578, "e) Brazil", 0, 302),
+    (1579, "f) Japan", 0, 302);
+
+-- Liaison de la question 302 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (302, 52);
+
+--- **************************
+--  ** Question 303
+--- **************************
+INSERT IGNORE INTO question (id, title) VALUES
+    (303, "Select the stringed musical instruments.");
+
+-- Réponses pour la question 303
+INSERT IGNORE INTO answers (id, title, is_correct, question_id) VALUES
+    (1580, "a) Guitar", 1, 303),
+    (1581, "b) Piano", 0, 303),
+    (1582, "c) Violin", 1, 303),
+    (1583, "d) Flute", 0, 303),
+    (1584, "e) Trumpet", 0, 303),
+    (1585, "f) Drum", 0, 303);
+
+-- Liaison de la question 303 à la catégorie 52
+INSERT IGNORE INTO question_categories (question_id, categories_id) VALUES
+    (303, 52);
