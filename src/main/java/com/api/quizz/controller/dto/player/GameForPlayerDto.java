@@ -1,8 +1,7 @@
-package com.api.quizz.controller.dto;
+package com.api.quizz.controller.dto.player;
 
-import com.api.quizz.repository.CategoryEntity;
-import com.api.quizz.repository.PlayerEntity;
-import com.api.quizz.repository.QuestionEntity;
+import com.api.quizz.controller.dto.category.CategoryDto;
+import com.api.quizz.controller.dto.question.QuestionDto;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
@@ -12,14 +11,15 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Data
 @NoArgsConstructor
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class GameDto {
+public class GameForPlayerDto {
     private Long id;
     private LocalDateTime createdAt;
     private Long score;
-    private PlayerDto player;
+    private Long playerId;
+    private String title;
     private List<CategoryDto> categories = new ArrayList<>();
-    private List<QuestionDto> questions = new ArrayList<>();
+    private List<QuestionForPlayerDto> questions = new ArrayList<>();
 }

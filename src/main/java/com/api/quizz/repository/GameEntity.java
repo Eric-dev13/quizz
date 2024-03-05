@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "game")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class GameEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,6 +30,9 @@ public class GameEntity {
     @ManyToOne
     @JoinColumn(name = "player_id")
     private PlayerEntity player;
+
+    @Column(name= "title")
+    private String title;
 
     @ManyToMany
     @JoinTable(name = "game_categories",

@@ -1,20 +1,20 @@
-package com.api.quizz.controller.dto;
+package com.api.quizz.controller.dto.category;
 
-import com.api.quizz.repository.GameEntity;
-import com.api.quizz.repository.QuestionEntity;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 public class CategoryDto {
+
     private Long id;
+
+    @Schema(description = "Nom de la catégorie")
     @NotBlank
     private String name;
-    //private List<GameDto> games = new ArrayList<>();
-    //private List<QuestionDto> questions = new ArrayList<>();
 }

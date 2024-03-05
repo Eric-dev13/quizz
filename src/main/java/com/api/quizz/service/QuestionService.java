@@ -1,12 +1,15 @@
 package com.api.quizz.service;
 
 
-import com.api.quizz.controller.dto.QuestionDto;
+import com.api.quizz.controller.dto.game.StartGameDto;
+import com.api.quizz.controller.dto.player.PlayerDto;
+import com.api.quizz.controller.dto.question.QuestionDto;
 import com.api.quizz.mapper.MapStructMapper;
 import com.api.quizz.repository.CategoryEntity;
 import com.api.quizz.repository.QuestionEntity;
 import com.api.quizz.repository.QuestionRepository;
 import lombok.RequiredArgsConstructor;
+import org.mapstruct.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -52,5 +55,16 @@ public class QuestionService {
         originalQuestionEntity.setTitle(questionEntity.getTitle());
         QuestionEntity savedQuestionEntity = questionRepository.save(originalQuestionEntity);
         return savedQuestionEntity != null;
+    }
+
+    public List<QuestionDto> generateGame(Long limit, List<String> categories) {
+        List<QuestionEntity> questionEntities = questionRepository.findQuestionsByCategory(limit,categories);
+        List<QuestionDto> questionDtos = questionEntities.stream().map(mapStructMapper::gameQuestionEntityToDto).collect(Collectors.toList());
+
+        if(questionDtos.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No Question by categories found");
+        }
+
+        return questionDtos;
     }
 }

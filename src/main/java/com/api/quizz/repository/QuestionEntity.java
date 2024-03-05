@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "question")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class QuestionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,14 +29,10 @@ public class QuestionEntity {
             inverseJoinColumns = @JoinColumn(name = "categories_id"))
     private List<CategoryEntity> categories = new ArrayList<>();
 
-
     @ManyToMany(mappedBy = "questions")
     private List<GameEntity> games = new ArrayList<>();
 
     @OneToMany(mappedBy = "question", orphanRemoval = true)
     private List<AnswersEntity> answers = new ArrayList<>();
-
-    //    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
-//    private List<AnswersQuestionEntity> answersQuestions = new ArrayList<>();
 
 }

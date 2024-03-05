@@ -1,5 +1,7 @@
 package com.api.quizz.repository;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +13,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "answers")
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class AnswersEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,12 +23,11 @@ public class AnswersEntity {
     @Column(name = "title")
     private String title;
 
+    @Column(name = "is_correct")
+    private boolean isCorrect;
+
     @ManyToOne
     @JoinColumn(name = "question_id")
     private QuestionEntity question;
-
-//    @OneToMany(mappedBy = "answers", cascade = CascadeType.ALL)
-//    private List<AnswersQuestionEntity> answersQuestions = new ArrayList<>();
-
 
 }

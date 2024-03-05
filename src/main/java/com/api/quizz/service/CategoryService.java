@@ -1,18 +1,15 @@
 package com.api.quizz.service;
 
-import com.api.quizz.controller.dto.CategoryDto;
-import com.api.quizz.exception.NotFoundException;
+import com.api.quizz.controller.dto.category.CategoryDto;
 import com.api.quizz.mapper.MapStructMapper;
 import com.api.quizz.repository.CategoryEntity;
 import com.api.quizz.repository.CategoryRepository;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -54,5 +51,10 @@ public class CategoryService {
         originalCategoryEntity.setName(categoryEntity.getName());
         CategoryEntity savedCategoryEntity = categoryRepository.save(originalCategoryEntity);
         return savedCategoryEntity != null;
+    }
+
+    public List<CategoryDto> findAllWhereNameIn(String[] categories) {
+        List<CategoryEntity> categoryEntities = categoryRepository.findAllWhereNameIn(categories);
+        return categoryEntities.stream().map(mapStructMapper::categoryEntityToDto).collect(Collectors.toList());
     }
 }
