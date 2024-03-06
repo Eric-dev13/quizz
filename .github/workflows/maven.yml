@@ -46,7 +46,7 @@ jobs:
           fi
 
       - name: Déploiement avec Rsync
-        run: rsync -r --delete-after --quiet $GITHUB_WORKSPACE/target/ belen@86.198.204.181:/chemin/vers/destination
+        run: rsync -r --delete-after --quiet $GITHUB_WORKSPACE/target/quizzmania.war belen@86.198.204.181:/Documents/
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     # - name: Update dependency graph
