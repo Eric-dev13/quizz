@@ -52,7 +52,7 @@ spring:
   sql:
     init:
       encoding: UTF-8
-      mode: never  # never,always
+      mode: never  # never, always
 
 
 

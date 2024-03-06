@@ -17,6 +17,7 @@ public class GameDto {
     private Long id;
     private LocalDateTime createdAt;
     private Long score;
+    private Long playerId;
     private PlayerDto player;
     private String title;
     private List<CategoryDto> categories = new ArrayList<>();
@@ -25,6 +26,13 @@ public class GameDto {
     public GameDto (String title, PlayerDto player, List<CategoryDto> categories, List<QuestionDto> questions) {
         this.title =title;
         this.player = player;
+        this.categories = categories;
+        this.questions = questions;
+    }
+
+    public GameDto (String title, long playerId, List<CategoryDto> categories, List<QuestionDto> questions) {
+        this.title =title;
+        this.playerId = playerId;
         this.categories = categories;
         this.questions = questions;
     }
